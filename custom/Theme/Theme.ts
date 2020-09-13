@@ -12,8 +12,8 @@ export default createMuiTheme({
       main: '#FF5252'
     },
     background: {
-      default: '#212121',
-      paper: '#272C34'
+      default: '#272C34',
+      paper: '#212121'
     }
   },
   typography: {

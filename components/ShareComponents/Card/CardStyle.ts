@@ -5,7 +5,7 @@ export const StyleCard = makeStyles((theme: Theme) =>
   createStyles({
     root: {
       width: '100%',
-      background: 'white',
+      background: theme.palette.primary.main,
       marginBottom: '10px'
     },
     media: {
