@@ -7,10 +7,10 @@ import { Theme } from '../custom'
 export default class DocumentApp extends Document {
   render () {
     return (
-      <Html lang="en">
+      <Html lang="pt-br">
         <Head>
-
           <meta name="theme-color" content={Theme.palette.primary.main} />
+          <link rel='stylesheet' href='/css/style.css' />
           <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;600;700;800&display=swap" rel="stylesheet"></link>
         </Head>
         <body>
