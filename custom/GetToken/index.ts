@@ -1,3 +1,3 @@
-import GetToken from './GetToken'
+import GetToken from './GetTokenAdapter'
 
 export default GetToken
