@@ -1,8 +1,7 @@
-import { GetToken } from '../../custom'
-
+require('dotenv').config()
 const headerWithAuthorization = ({
   'Content-Type': 'application/json',
-  Authorization: GetToken
+  Authorization: process.env.TOKEN
 })
 
 const header = ({
