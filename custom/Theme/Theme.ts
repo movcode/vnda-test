@@ -15,5 +15,11 @@ export default createMuiTheme({
       default: '#212121',
       paper: '#272C34'
     }
+  },
+  typography: {
+    fontFamily: [
+      'Poppins',
+      'sans-serif'
+    ].join(',')
   }
 })
