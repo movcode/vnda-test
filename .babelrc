@@ -3,4 +3,5 @@
         "next/babel",
         "@babel/preset-typescript"
     ]
+
 }
