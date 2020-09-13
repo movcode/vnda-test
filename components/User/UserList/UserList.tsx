@@ -1,7 +1,11 @@
-
+import { Card } from '../../ShareComponents'
 const UserList = () => {
   return (
-    <div>User List</div>
+    <>
+      <Card/>
+      <Card/>
+
+    </>
   )
 }
 

@@ -1,4 +1,5 @@
 import React from 'react'
+import { AiFillDelete, AiFillEdit, AiOutlineDownCircle } from 'react-icons/ai'
 
 import clsx from 'clsx'
 import Card from '@material-ui/core/Card'
@@ -26,7 +27,7 @@ export default function RecipeReviewCard () {
       <CardHeader
         avatar={
           <Avatar aria-label="recipe" className={classesCard.avatar}>
-                        R
+            R
           </Avatar>
         }
         action={
@@ -38,9 +39,14 @@ export default function RecipeReviewCard () {
         subheader="movcode2@gmail.com"
       />
       <CardActions disableSpacing>
-        <IconButton aria-label="add to favorites">
-
+        <IconButton aria-label="delete user">
+          <AiFillDelete />
         </IconButton>
+
+        <IconButton aria-label="user edit">
+          <AiFillEdit />
+        </IconButton>
+
         <IconButton aria-label="share">
 
         </IconButton>
@@ -52,24 +58,15 @@ export default function RecipeReviewCard () {
           aria-expanded={expanded}
           aria-label="show more"
         >
-
+          <AiOutlineDownCircle />
         </IconButton>
       </CardActions>
       <Collapse in={expanded} timeout="auto" unmountOnExit>
         <CardContent>
-          <Grid container >
-            <Typography paragraph>Função: Aagente</Typography>
-          </Grid>
-
-          <Grid container justify='center' alignItems='center' xs={12} md={12}>  <Typography paragraph>Tags:</Typography></Grid>
-          <Grid container>  <Typography paragraph>Tags:</Typography></Grid>
-          <Grid container wrap='wrap'>
-            <Chip label="Basic" />
-            <Chip label="Basic" />
-            <Chip label="Basic" />
-            <Chip label="Basic" />
-          </Grid>
-
+          <Grid container ><Typography paragraph>Código externo: <b>2323</b></Typography></Grid>
+          <Grid container ><Typography paragraph>Nome: <b>Rafael Augusto</b></Typography></Grid>
+          <Grid container ><Typography paragraph>Email: <b>teste@teste.com</b></Typography></Grid>
+          <Grid container ><Typography paragraph>Função: <b>Agente</b></Typography></Grid>
         </CardContent>
       </Collapse>
     </Card>
