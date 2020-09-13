@@ -1,10 +1,11 @@
 import { ReactChild, ReactChildren } from 'react'
 import { StyledContainer, WrraperGrid } from './CustomContainerStyle'
 interface Props {
-  chilren: ReactChildren | ReactChild
+  children: ReactChildren | ReactChild
 }
-const CustomContainer = ({ chilren }: Props) =>
+const CustomContainer = ({ children }: Props) =>
   <StyledContainer>
-    <WrraperGrid>{chilren}</WrraperGrid>
+    <WrraperGrid>{children}</WrraperGrid>
   </StyledContainer>
+
 export default CustomContainer

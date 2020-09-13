@@ -1,6 +1,12 @@
+import { CustomContainer } from '../ShareComponents'
+
 const UserUi = () => {
   return (
-    <div>User Component</div>
+    <CustomContainer>
+      <>
+      User component
+      </>
+    </CustomContainer>
   )
 }
 
