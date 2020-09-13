@@ -1,7 +1,7 @@
-
+import { User } from '../components'
 const HomePage = () => {
   return (
-    <div>Home Page</div>
+    <User/>
   )
 }
 
