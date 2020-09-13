@@ -4,20 +4,17 @@ import { Theme } from '../../../custom'
 
 export const StyledContainer = styled(Container)({
   height: '100vh',
-  display: 'flex',
-  justifyContent: 'center',
-  alignItems: 'center'
+  paddingTop: '40px',
+  paddingBottom: '40px'
 })
 
 export const WrraperGrid = styled(Grid)({
   width: '100%',
-  height: 'auto',
+  height: '100%',
   background: Theme.palette.background.paper,
   padding: '20px',
   display: 'flex',
-  justifyContent: 'center',
-  alignItems: 'center',
-  flexDirection: 'column',
-  borderRadius: 4,
+  borderRadius: 8,
+  overflow: 'hidden',
   color: Theme.palette.primary.main
 })
