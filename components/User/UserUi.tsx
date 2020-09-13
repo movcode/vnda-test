@@ -6,19 +6,19 @@ const UserUi = () => {
   const add = (values) => console.log(values)
   return (
     <CustomContainer>
-      <>
 
-        <Grid container >
-          <Grid item xs={12} md={6}>
-            <Form handleSubmit={add} />
-          </Grid>
+      <Grid container>
 
-          <Grid item xs={12} md={6}>
-            <List />
-          </Grid>
+        <Grid item xs={12} md={6}>
+          <Form handleSubmit={add} />
         </Grid>
 
-      </>
+        <Grid item xs={12} md={6}>
+          <List />
+        </Grid>
+
+      </Grid>
+
     </CustomContainer>
   )
 }
