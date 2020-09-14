@@ -2,13 +2,14 @@ import { Grid } from '@material-ui/core'
 import { CustomContainer, Title } from '../ShareComponents'
 import Form from './UserForm'
 import List from './UserList'
+import IUser from './IUser'
 
 interface Props{
   users:[]
 }
 
 const UserUi = ({ users }:Props) => {
-  const add = (values) => console.log(values)
+  const add = (values:IUser) => console.log(values)
 
   return (
     <CustomContainer>

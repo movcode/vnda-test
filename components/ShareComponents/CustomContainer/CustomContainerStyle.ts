@@ -3,7 +3,7 @@ import { Container } from '@material-ui/core'
 import { Theme } from '../../../custom'
 
 export const StyledContainer = styled(Container)({
-  height: '100vh',
+  height: 'auto',
   paddingTop: '20px',
   paddingBottom: '20px',
   display: 'flex',
