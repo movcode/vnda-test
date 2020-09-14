@@ -7,15 +7,18 @@ import useStyles from './StyleInputSelectRoles'
 
 interface Props{
     label:string,
-
+    changed : (value:string) => void
 }
-const CustomInputSelect = ({ label }:Props) => {
+const CustomInputSelect = ({ label, changed }:Props) => {
   const classes = useStyles()
   const [value, setValue] = useState('')
 
   const handleChange = (event: ChangeEvent<{ value: unknown }>) => {
-    setValue(event.target.value as string)
+    const data = event.target.value as string
+    setValue(data)
+    changed(data)
   }
+
   return (
     <FormControl className={classes.root}>
       <InputLabel className={classes.label}>{label}</InputLabel>
@@ -25,9 +28,9 @@ const CustomInputSelect = ({ label }:Props) => {
         value={value}
         onChange={handleChange}
       >
-        <MenuItem value={'Gestor'}>Gestor</MenuItem>
-        <MenuItem value={'Agente'}>Agente</MenuItem>
-        <MenuItem value={'Local'}>Local</MenuItem>
+        <MenuItem className={classes.label} value={'Gestor'}>Gestor</MenuItem>
+        <MenuItem className={classes.label} value={'Agente'}>Agente</MenuItem>
+        <MenuItem className={classes.label} value={'Local'}>Local</MenuItem>
       </Select>
     </FormControl>
   )

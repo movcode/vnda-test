@@ -27,7 +27,7 @@ const UserForm = ({ handleSubmit }: Props) => {
         resetForm()
       }}
     >
-      {({ isValid, dirty }) => (
+      {({ isValid, dirty, setFieldValue }) => (
         <Grid
           container
           style={{ padding: '10px' }}
@@ -53,7 +53,9 @@ const UserForm = ({ handleSubmit }: Props) => {
               value={FormState.tags}
               remove={removeTag} add={addTag} />
 
-            <InputSelectRoles label='Funções' />
+            <InputSelectRoles
+              changed={(value: string) => setFieldValue('role_name', value)}
+              label='Funções' />
 
             <Button
               type='submit'
