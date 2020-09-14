@@ -44,7 +44,7 @@ const UserForm = ({ handleSubmit }: Props) => {
                   <ErrorMessage name="name" className='error' component='span' />
                 </Grid>
                 <Grid item md={4} sm={12}>
-                  <CustomTextField label="Código Externo*" name='external_code' type='number' />
+                  <CustomTextField label="Código Externo*" name='external_code' type='text' />
                   <ErrorMessage name="external_code" className='error' component='span' />
                 </Grid>
               </Grid>
