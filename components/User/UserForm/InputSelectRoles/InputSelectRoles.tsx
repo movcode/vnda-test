@@ -3,22 +3,26 @@ import InputLabel from '@material-ui/core/InputLabel'
 import MenuItem from '@material-ui/core/MenuItem'
 import FormControl from '@material-ui/core/FormControl'
 import Select from '@material-ui/core/Select'
-import useStyles from './CustomInputStyle'
+import useStyles from './StyleInputSelectRoles'
 
-const CustomInputSelect = () => {
+interface Props{
+    label:string,
+
+}
+const CustomInputSelect = ({ label }:Props) => {
   const classes = useStyles()
-  const [age, setAge] = useState('')
+  const [value, setValue] = useState('')
 
   const handleChange = (event: ChangeEvent<{ value: unknown }>) => {
-    setAge(event.target.value as string)
+    setValue(event.target.value as string)
   }
   return (
     <FormControl className={classes.root}>
-      <InputLabel className={classes.label}>Age</InputLabel>
+      <InputLabel className={classes.label}>{label}</InputLabel>
       <Select
         labelId="demo-simple-select-label"
         id="demo-simple-select"
-        value={age}
+        value={value}
         onChange={handleChange}
       >
         <MenuItem value={'Gestor'}>Gestor</MenuItem>

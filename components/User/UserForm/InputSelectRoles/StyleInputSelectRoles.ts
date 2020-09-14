@@ -17,7 +17,9 @@ export default makeStyles((theme: Theme) =>
       width: '100%',
       color: '#fff',
       marginBottom: '20px',
+      '& .MuiSelect-root': { color: 'white' },
       '& .MuiInput-underline:before': {
+        color: 'white',
         borderBottom: `2px solid ${theme.palette.secondary.main}`
       },
       '& .MuiInput-underline:after': {
