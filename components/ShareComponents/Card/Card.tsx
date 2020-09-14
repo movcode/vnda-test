@@ -20,10 +20,11 @@ interface Props {
   name: string,
   email: string,
   external_code: string,
-  remove: (id: string) => void
+  remove: (id: string) => void,
+  edit:()=>void
 }
 
-export default function RecipeReviewCard ({ id, name, email, external_code, remove }: Props) {
+export default function RecipeReviewCard ({ id, name, email, external_code, remove, edit }: Props) {
   const classesCard = StyleCard()
 
   const [expanded, setExpanded] = React.useState(false)
@@ -48,7 +49,7 @@ export default function RecipeReviewCard ({ id, name, email, external_code, remo
           <AiFillDelete />
         </IconButton>
 
-        <IconButton aria-label="user edit">
+        <IconButton aria-label="user edit" onClick={edit}>
           <AiFillEdit />
         </IconButton>
 

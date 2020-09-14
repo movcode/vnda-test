@@ -5,5 +5,6 @@ export default interface Iuser {
     external_code: string,
     email: string,
     role_name: string,
+    role?:string,
     tags: []
   }

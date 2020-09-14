@@ -6,8 +6,9 @@ import UserEntity from '../../../entities/UserEntity'
 
 interface Props {
   initUsers: []
+  update: (user:UserEntity)=>void
 }
-const UserList = ({ initUsers }: Props) => {
+const UserList = ({ initUsers, update }: Props) => {
   const [users, setUsers] = useState([])
   useEffect(() => {
     setUsers(initUsers)
@@ -27,6 +28,7 @@ const UserList = ({ initUsers }: Props) => {
       <StyleList className='scroll'>
         {users?.map((user: UserEntity) =>
           <Card key={user?.id}
+            edit={() => update(user)}
             id={user.id}
             name={user.name}
             email={user.email}

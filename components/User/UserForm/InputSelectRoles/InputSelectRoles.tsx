@@ -7,6 +7,7 @@ import useStyles from './StyleInputSelectRoles'
 
 interface Props{
     label:string,
+
     changed : (value:string) => void
 }
 const CustomInputSelect = ({ label, changed }:Props) => {
