@@ -1,9 +1,8 @@
 import * as Yup from 'yup'
 
 export default Yup.object({
-  name: Yup.string().required(),
-  external_code: Yup.number().required(),
-  email: Yup.string().email().required(),
-  role_name: Yup.string(),
-  tags: Yup.string().required()
+  name: Yup.string().required('O nome é obrigatório'),
+  external_code: Yup.number().required('O código é obrigatório'),
+  email: Yup.string().email().required('O email é obrigatório'),
+  role_name: Yup.string()
 })
