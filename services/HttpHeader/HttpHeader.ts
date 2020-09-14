@@ -1,11 +1,15 @@
 require('dotenv').config()
 const headerWithAuthorization = ({
   'Content-Type': 'application/json',
+  'Access-Control-Allow-Origin': '*',
   Authorization: process.env.TOKEN
 })
 
 const header = ({
-  'Content-Type': 'application/json'
+  'Content-Type': 'application/json',
+  'Access-Control-Allow-Origin': '*'
 })
 
-export default (auth: boolean) => ({ headers: auth ? headerWithAuthorization : header })
+const HttpHeader = (auth: boolean) => ({ headers: auth ? headerWithAuthorization : header })
+
+export default HttpHeader

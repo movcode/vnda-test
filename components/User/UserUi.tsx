@@ -6,7 +6,7 @@ import { CustomContainer, Title } from '../ShareComponents'
 import { GetRoleByCode } from '../../custom'
 import Form from './UserForm'
 import List from './UserList'
-import { UserType } from './types'
+import { UserType } from './Types'
 import UserFormState from './UserForm/UserFormState'
 import { UserAction } from './redux'
 

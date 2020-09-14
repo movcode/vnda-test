@@ -1,4 +1,4 @@
-import { UserType } from '../types'
+import { UserType } from '../Types'
 
 const UserFormState: UserType = ({
   name: '',
