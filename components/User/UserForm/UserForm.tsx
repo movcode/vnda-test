@@ -49,7 +49,7 @@ const UserForm = ({ handleSubmit }: Props) => {
             <CustomTextField label="Função*" name='role_name' type='text' />
             <ChipInputText
               name='tags'
-              label='Tags'
+              label='Tags*'
               value={FormState.tags}
               remove={removeTag} add={addTag}/>
 
