@@ -6,11 +6,11 @@ import useMediaQuery from '@material-ui/core/useMediaQuery'
 
 import UserFormValidation from './UserValidationForm'
 import InputSelectRoles from './InputSelectRoles'
-import IUser from '../IUser'
+import { UserType } from '../types'
 
 interface Props {
   handleSubmit: any,
-  formState: IUser,
+  formState: UserType,
   update: boolean,
 }
 

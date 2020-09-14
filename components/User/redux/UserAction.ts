@@ -1,9 +1,9 @@
-import { ListAction } from '../../../custom'
-import IUser from '../IUser'
+
+import { UserType } from '../types'
 
 const UserAction = {
-  store: (user: IUser) => ({
-    type: ListAction.users.store,
+  store: (user: UserType) => ({
+    type: '',
     payload: user
   })
 }

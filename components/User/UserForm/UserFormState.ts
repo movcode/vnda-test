@@ -1,6 +1,6 @@
-import IUser from '../IUser'
+import { UserType } from '../types'
 
-const UserFormState: IUser = ({
+const UserFormState: UserType = ({
   name: '',
   external_code: '',
   email: '',

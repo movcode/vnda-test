@@ -1,6 +1,5 @@
 import { stat } from 'fs'
 import { boolean } from 'yup'
-import { ListAction } from '../../../custom'
 import formState from '../UserForm/UserFormState'
 
 const INIT_STATE = {

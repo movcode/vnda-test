@@ -6,7 +6,7 @@ import { CustomContainer, Title } from '../ShareComponents'
 import { GetRoleByCode } from '../../custom'
 import Form from './UserForm'
 import List from './UserList'
-import IUser from './IUser'
+import { UserType } from './types'
 import UserFormState from './UserForm/UserFormState'
 import { UserAction } from './redux'
 
@@ -15,15 +15,15 @@ interface Props {
 }
 
 const UserUi = ({ users }: Props) => {
-  const [formState, setFormState] = useState<IUser>(UserFormState)
+  const [formState, setFormState] = useState<UserType>(UserFormState)
   const [updateForm, setUpdateForm] = useState<boolean>(false)
   const dispatch = useDispatch()
 
-  const add = (values: IUser) => !updateForm
+  const add = (values: UserType) => !updateForm
     ? dispatch(UserAction.store(values))
     : 'send update'
 
-  const update = (user: IUser) => {
+  const update = (user: UserType) => {
     setUpdateForm(true)
     setFormState({
       name: user.name,
