@@ -1,7 +1,10 @@
 import { Grid } from '@material-ui/core'
 import { Card } from '../../ShareComponents'
 import { WrraperList, StyleList } from './UserListStyle'
-const UserList = () => {
+interface Props{
+  users:[]
+}
+const UserList = ({ users }:Props) => {
   return (
     <WrraperList >
       <Grid container justify='center' alignItems='center'>

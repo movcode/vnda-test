@@ -13,7 +13,7 @@ export const WrraperList = styled(Grid)({
 
 export const StyleList = styled(List)({
   width: '100%',
-  height: '700px',
+  height: '600px',
   overflow: 'auto',
   marginTop: '10px',
   marginBottom: '10px'

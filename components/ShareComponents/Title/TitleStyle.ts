@@ -9,7 +9,7 @@ interface StyleProps {
 
 export default makeStyles({
   title: (props: StyleProps) => ({
-    marginTop: props?.top || '40px',
+    marginTop: props?.top || '0px',
     marginBottom: props?.bottom || '40px',
     width: '100%',
     textAlign: 'center',

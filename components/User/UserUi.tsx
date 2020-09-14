@@ -2,7 +2,12 @@ import { Grid } from '@material-ui/core'
 import { CustomContainer, Title } from '../ShareComponents'
 import Form from './UserForm'
 import List from './UserList'
-const UserUi = () => {
+
+interface Props{
+  users:[]
+}
+
+const UserUi = ({ users }:Props) => {
   const add = (values) => console.log(values)
 
   return (
@@ -17,7 +22,7 @@ const UserUi = () => {
         </Grid>
 
         <Grid item xs={12} md={6}>
-          <List />
+          <List users={users} />
         </Grid>
 
       </Grid>
