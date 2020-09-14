@@ -4,6 +4,8 @@ import Head from 'next/head'
 import { ThemeProvider } from '@material-ui/core/'
 import CssBaseline from '@material-ui/core/CssBaseline'
 import { Theme } from '../custom'
+import { Provider } from 'react-redux'
+import store from '../redux'
 
 const App = ({ Component, pageProps }: AppProps) => {
   useEffect(() => {
@@ -22,7 +24,9 @@ const App = ({ Component, pageProps }: AppProps) => {
 
     <ThemeProvider theme={Theme}>
       <CssBaseline />
-      <Component {...pageProps} />
+      <Provider store={store}>
+        <Component {...pageProps} />
+      </Provider>
     </ThemeProvider>
   </>
 }

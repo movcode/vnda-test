@@ -1,4 +1,5 @@
 import { useState } from 'react'
+import { useDispatch } from 'react-redux'
 import { Grid, IconButton } from '@material-ui/core'
 import { AiOutlineUserAdd } from 'react-icons/ai'
 import { CustomContainer, Title } from '../ShareComponents'
@@ -7,6 +8,8 @@ import Form from './UserForm'
 import List from './UserList'
 import IUser from './IUser'
 import UserFormState from './UserForm/UserFormState'
+import { UserAction } from './redux'
+
 interface Props {
   users: []
 }
@@ -14,8 +17,11 @@ interface Props {
 const UserUi = ({ users }: Props) => {
   const [formState, setFormState] = useState<IUser>(UserFormState)
   const [updateForm, setUpdateForm] = useState<boolean>(false)
+  const dispatch = useDispatch()
 
-  const add = (values: IUser) => console.log(values)
+  const add = (values: IUser) => !updateForm
+    ? dispatch(UserAction.store(values))
+    : 'send update'
 
   const update = (user: IUser) => {
     setUpdateForm(true)
