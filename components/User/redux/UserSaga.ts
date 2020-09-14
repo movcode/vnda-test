@@ -1,6 +1,6 @@
 
 import { AxiosError, AxiosResponse } from 'axios'
-import { takeLatest, put, call } from 'redux-saga/effects'
+import { takeLatest, call } from 'redux-saga/effects'
 import { UserActionMap, UserActionType, UserType } from '../Types'
 import UserRepo from '../UserRepository'
 
