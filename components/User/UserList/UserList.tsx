@@ -1,38 +1,39 @@
+import { useEffect, useState } from 'react'
 import { Grid } from '@material-ui/core'
 import { Card } from '../../ShareComponents'
 import { WrraperList, StyleList } from './UserListStyle'
-interface Props{
-  users:[]
+import UserEntity from '../../../entities/UserEntity'
+
+interface Props {
+  initUsers: []
 }
-const UserList = ({ users }:Props) => {
+const UserList = ({ initUsers }: Props) => {
+  const [users, setUsers] = useState([])
+  useEffect(() => {
+    setUsers(initUsers)
+  }, [initUsers])
+
+  const removeUser = (id: string) => {
+    const newUsers = users.filter((user: UserEntity) => user.id !== id)
+    setUsers(newUsers)
+  }
+
   return (
     <WrraperList >
       <Grid container justify='center' alignItems='center'>
         <img width='18' src='/imgs/mouse_up.png' />
       </Grid>
+
       <StyleList className='scroll'>
-        <Card />
-        <Card />
-        <Card />
-        <Card />
-        <Card />
-        <Card />
-        <Card />
-        <Card />
-        <Card />
-        <Card />
-        <Card />
-        <Card />
-        <Card />
-        <Card />
-        <Card />
-        <Card />
-        <Card />
-        <Card />
-        <Card />
-        <Card />
-        <Card />
-        <Card />
+        {users?.map((user: UserEntity) =>
+          <Card key={user?.id}
+            id={user.id}
+            name={user.name}
+            email={user.email}
+            external_code={user.external_code}
+            remove={removeUser}
+          />
+        )}
       </StyleList>
       <Grid container justify='center' alignItems='center'>
         <img width='18' src='/imgs/mouse_down.png' />
