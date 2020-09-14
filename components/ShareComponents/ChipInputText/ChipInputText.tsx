@@ -1,6 +1,6 @@
 import ChipInput from 'material-ui-chip-input'
 import { Field } from 'formik'
-import StyleTextField from '../CustomTextField/StyleCustomText'
+import StyleTextField from './StyleInputChip'
 
 interface Props {
   name:string,
@@ -22,7 +22,7 @@ const ChipInputText = ({ name, label, error = false, value, add, remove }: Props
       onDelete={(chip, index) => remove(index)}
       name={name}
       value={value}
-      placeholder='Digite a tag clica em  enter'
+      placeholder='Digite a tag e aperte enter'
       className={classes.root}
       InputProps={{ className: classes.input }}
       InputLabelProps={{ className: classes.label }}

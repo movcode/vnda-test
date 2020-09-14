@@ -12,7 +12,7 @@ interface Props {
 const UserForm = ({ handleSubmit }: Props) => {
   const screenDesktop = useMediaQuery('(min-width:600px)')
 
-  const addTag = (tag:string) => FormState.tags.push(tag)
+  const addTag = (tag:never) => FormState.tags.push(tag)
   const removeTag = (key:number) => {
     FormState.tags.splice(key, 1)
   }

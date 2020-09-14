@@ -24,7 +24,7 @@ export const StyleCard = makeStyles((theme: Theme) =>
       transform: 'rotate(180deg)'
     },
     avatar: {
-      backgroundColor: red[500]
+      backgroundColor: theme.palette.primary.main
     }
   })
 )
