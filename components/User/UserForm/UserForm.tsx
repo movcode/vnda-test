@@ -1,6 +1,6 @@
-import { Formik, Form, FormikValues } from 'formik'
+import { Formik, Form, Field, FormikValues } from 'formik'
 import { Grid, Button } from '@material-ui/core'
-import { CustomTextField, ChipInputText } from '../../ShareComponents'
+import { CustomTextField, ChipInputText, CustomInputSelect } from '../../ShareComponents'
 import useMediaQuery from '@material-ui/core/useMediaQuery'
 import FormState from './UserFormState'
 import UserFormValidation from './UserValidationForm'
@@ -35,7 +35,7 @@ const UserForm = ({ handleSubmit }: Props) => {
           alignItems="center"
         >
           <Form>
-
+            <Field type='hidden' name='role_name'/>
             <Grid container direction={screenDesktop ? 'row' : 'column'}>
               <Grid item md={8} sm={12}>
                 <CustomTextField label="Nome*" name='name' type='text' />
@@ -44,14 +44,15 @@ const UserForm = ({ handleSubmit }: Props) => {
                 <CustomTextField label="Código Externo*" name='external_code' type='number' />
               </Grid>
             </Grid>
-
             <CustomTextField label="Email*" name='email' type='email' />
-            <CustomTextField label="Função*" name='role_name' type='text' />
+
             <ChipInputText
               name='tags'
               label='Tags*'
               value={FormState.tags}
               remove={removeTag} add={addTag}/>
+
+            <CustomInputSelect/>
 
             <Button
               type='submit'
