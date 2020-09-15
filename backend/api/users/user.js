@@ -1,18 +1,33 @@
+const repo = require('./user.repository')
+const { errors } = require('../../custom/')
 
 const list = async (req, res) => {
-  res.send('list')
+  const response = await repo.list()
+  return res.send(response)
 }
 
 const store = async (req, res) => {
-  return res.send('create')
+  const { email, name, role_name, external_code, tags } = req.body
+  if (!email || !name || !role_name || !external_code || !tags) return errors(res).error404('params not found')
+
+  const response = await repo.store({ email, name, role_name, external_code, tags })
+  if (!response) return errors(res).error500('error server')
+
+  return res.send(response)
 }
 
 const remove = async (req, res) => {
-  return res.send('remove')
+  const { id } = req.params
+  if (!id) return errors(res).error404('id not found')
+
+  return res.send(id)
 }
 
 const update = async (req, res) => {
-  return res.send('update')
+  const { id } = req.params
+  if (!id) return errors(res).error404('id not found')
+
+  return res.send(id)
 }
 
 module.exports = {
