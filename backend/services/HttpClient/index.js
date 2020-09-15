@@ -1,3 +1,17 @@
-import HttpClient from './HttpClient'
+const axios = require('axios')
+const Header = require('../HttpHeader')
 
-export default HttpClient
+const HOSTAPI = 'https://demo.vnda.com.br/api/v2/'
+
+const HttpClient = () => ({
+  get: async (path, auth) =>
+    await axios.get(`${HOSTAPI}${path}`, Header(auth)),
+
+  post: async (path, data, auth) =>
+    await axios.post(`${HOSTAPI}${path}`, data, Header(auth)),
+
+  remove: async (path, auth) =>
+    await axios.delete(`${HOSTAPI}${path}`, Header(auth))
+})
+
+module.exports = HttpClient
