@@ -1,7 +1,7 @@
 import Swal from 'sweetalert2'
 
 export default ({
-  Alert: (status: boolean, msg: string) => Swal.fire({
+  Show: (status: boolean, msg: string) => Swal.fire({
     position: 'top-end',
     icon: status ? 'success' : 'error',
     title: msg,

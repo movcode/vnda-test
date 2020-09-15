@@ -1,14 +1,16 @@
-import { stat } from 'fs'
-import { boolean } from 'yup'
-import formState from '../UserForm/UserFormState'
+import { UserFormState, UserActionType, UserActionMap, UserState } from '../Types'
 
-const INIT_STATE = {
-  status: boolean,
-  users: formState
+const INIT_STATE: UserState = {
+  response: { data: UserFormState, status: false }
 }
 
-const UserReduce = (state = INIT_STATE, action:any) => {
-  return state
+const UserReduce = (state: UserState = INIT_STATE, action: UserActionType) => {
+  const { type, payload } = action
+
+  switch (type) {
+    case UserActionMap.RESPONSE: return { ...state, response: payload }
+    default: return state
+  }
 }
 
 export default UserReduce

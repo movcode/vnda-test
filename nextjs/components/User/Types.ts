@@ -1,12 +1,15 @@
 /* eslint-disable no-unused-vars */
-/* eslint-disable camelcase */
-
-import { Action } from 'redux'
+export const UserFormState: UserType = ({
+  name: '',
+  external_code: '',
+  email: '',
+  role_name: '',
+  tags: []
+})
 
 /**
  * User Type
  */
-
 export interface UserType {
   name: string,
   external_code: string,
@@ -19,7 +22,7 @@ export interface UserType {
 export enum UserActionMap {
   LIST = '@redux/USER_LIST',
   STORE = '@redux/USER_STORE',
-  STORE_SUCCES = '@redux/USER_STORE_SUCCESS'
+  RESPONSE = '@redux/USER_RESPONSE'
 }
 
 /**
@@ -31,9 +34,18 @@ export interface UserActionType {
 }
 
 /**
+ * Response User
+ */
+export interface UserState {
+  response:{
+    status:boolean
+    data?: any,
+  }
+}
+
+/**
  * User Type Success
  */
-export interface UserResponseSuccess{
-  data:UserType,
-  message: string
+export interface UserReducer {
+  user:UserState
 }

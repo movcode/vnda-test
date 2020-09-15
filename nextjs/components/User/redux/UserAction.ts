@@ -1,9 +1,11 @@
 import { action } from 'typesafe-actions'
-import { UserType, UserActionMap, UserResponseSuccess } from '../Types'
+import { UserType, UserActionMap } from '../Types'
 
 const UserAction = {
   store: (user: UserType) => action(UserActionMap.STORE, user),
-  success: (response:UserResponseSuccess) => action(UserActionMap.STORE_SUCCES, response)
+  response: (status:boolean, data:any) => action(UserActionMap.RESPONSE, {
+    status, data
+  })
 }
 
 export default UserAction

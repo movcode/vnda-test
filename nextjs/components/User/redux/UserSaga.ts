@@ -1,26 +1,27 @@
 
-import { AxiosError, AxiosResponse } from 'axios'
+import { AxiosResponse } from 'axios'
 import { takeLatest, call, put } from 'redux-saga/effects'
-import { UserActionMap, UserActionType, UserType, UserResponseSuccess } from '../Types'
+import { UserActionMap, UserActionType, UserType } from '../Types'
+import { Alert } from '../../ShareComponents'
 import UserAction from './UserAction'
 import UserRepo from '../UserRepository'
 
 const storeInApi = async (user: UserType) => await UserRepo.post(user)
+
+const dispatch = (status:boolean, data:any = null) =>
+  put(UserAction.response(status, data))
 
 function * store (ac: UserActionType) {
   const { payload } = ac
 
   try {
     const resp: AxiosResponse = yield call(storeInApi, payload)
+    yield dispatch(true, resp.data)
 
-    const response: UserResponseSuccess = {
-      data: resp.data,
-      message: 'Usuário adicionado com sucesso'
-    }
-    yield put(UserAction.success(response))
+    yield Alert.Show(true, 'Usuário adicionado com sucesso!')
   } catch (err) {
-    const error: AxiosError = err
-    console.log(error.response?.data)
+    yield dispatch(false, null)
+    yield Alert.Show(false, 'Erro ao adicionar o usuário!')
   }
 }
 
