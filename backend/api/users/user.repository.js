@@ -31,4 +31,14 @@ const remove = async id => {
   }
 }
 
-module.exports = { list, store, remove }
+const update = async (id, data) => {
+  try {
+    const res = await HttpClient().update(`${path}/${id}`, data, true)
+    return res.data
+  } catch (error) {
+    console.log(error)
+    return false
+  }
+}
+
+module.exports = { list, store, remove, update }
