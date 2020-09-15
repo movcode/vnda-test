@@ -9,6 +9,7 @@ import List from './UserList'
 import { UserType } from './Types'
 import UserFormState from './UserForm/UserFormState'
 import { UserAction } from './redux'
+import UserRepo from './UserRepository'
 
 interface Props {
   users: []
@@ -34,6 +35,8 @@ const UserUi = ({ users }: Props) => {
     })
   }
 
+  const remove = (id: string) => UserRepo.remove(id)
+
   return (
     <CustomContainer>
       <Grid container>
@@ -53,7 +56,7 @@ const UserUi = ({ users }: Props) => {
         </Grid>
 
         <Grid item xs={12} md={6}>
-          <List initUsers={users} update={update} />
+          <List initUsers={users} update={update} remove={remove} />
         </Grid>
 
       </Grid>

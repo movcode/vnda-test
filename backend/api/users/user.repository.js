@@ -4,7 +4,7 @@ const path = 'users'
 
 const list = async () => {
   try {
-    const res = await HttpClient().get('users', true)
+    const res = await HttpClient().get(path, true)
     return res.data
   } catch (error) {
     console.log(error)
@@ -13,7 +13,7 @@ const list = async () => {
 }
 const store = async data => {
   try {
-    const res = await HttpClient().post('users', data, true)
+    const res = await HttpClient().post(path, data, true)
     return res.data
   } catch (error) {
     console.log(error)
@@ -21,4 +21,14 @@ const store = async data => {
   }
 }
 
-module.exports = { list, store }
+const remove = async id => {
+  try {
+    const res = await HttpClient().remove(`${path}/${id}`, true)
+    return res.data
+  } catch (error) {
+    console.log(error)
+    return false
+  }
+}
+
+module.exports = { list, store, remove }

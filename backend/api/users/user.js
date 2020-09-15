@@ -20,7 +20,9 @@ const remove = async (req, res) => {
   const { id } = req.params
   if (!id) return errors(res).error404('id not found')
 
-  return res.send(id)
+  const response = await repo.remove(id)
+
+  return res.send(response)
 }
 
 const update = async (req, res) => {

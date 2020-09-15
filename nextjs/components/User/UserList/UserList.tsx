@@ -7,14 +7,16 @@ import UserEntity from '../../../entities/UserEntity'
 interface Props {
   initUsers: []
   update: (user:UserEntity)=>void
+  remove : (id)=>void
 }
-const UserList = ({ initUsers, update }: Props) => {
+const UserList = ({ initUsers, update, remove }: Props) => {
   const [users, setUsers] = useState([])
   useEffect(() => {
     setUsers(initUsers)
   }, [initUsers])
 
   const removeUser = (id: string) => {
+    remove(id)
     const newUsers = users.filter((user: UserEntity) => user.id !== id)
     setUsers(newUsers)
   }
