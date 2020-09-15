@@ -1,4 +1,3 @@
 const HttpClient = require('./HttpClient')
-module.exports = {
-  HttpClient
-}
+
+module.exports = { HttpClient }
