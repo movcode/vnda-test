@@ -10,6 +10,7 @@ const store = async (req, res) => {
 const remove = async (req, res) => {
   return res.send('remove')
 }
+
 const update = async (req, res) => {
   return res.send('update')
 }
