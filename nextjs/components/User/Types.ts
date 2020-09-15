@@ -22,7 +22,8 @@ export interface UserType {
 export enum UserActionMap {
   LIST = '@redux/USER_LIST',
   STORE = '@redux/USER_STORE',
-  RESPONSE = '@redux/USER_RESPONSE'
+  UPDATE = '@redux/USER_UPDATE',
+  RESPONSE = '@redux/USER_RESPONSE',
 }
 
 /**
