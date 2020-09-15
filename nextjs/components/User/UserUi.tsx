@@ -21,11 +21,12 @@ const UserUi = ({ users }: Props) => {
 
   const add = (values: UserType) => !updateForm
     ? dispatch(UserAction.store(values))
-    : 'send update'
+    : dispatch(UserAction.update(values))
 
   const update = (user: UserType) => {
     setUpdateForm(true)
     setFormState({
+      id: user.id,
       name: user.name,
       external_code: user.external_code,
       email: user.email,

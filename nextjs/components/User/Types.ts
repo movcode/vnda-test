@@ -11,6 +11,7 @@ export const UserFormState: UserType = ({
  * User Type
  */
 export interface UserType {
+  id?:string,
   name: string,
   external_code: string,
   email: string,

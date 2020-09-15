@@ -3,7 +3,9 @@ import { UserType, UserActionMap } from '../Types'
 
 const UserAction = {
   store: (user: UserType) => action(UserActionMap.STORE, user),
-  response: (status:boolean, data:any) => action(UserActionMap.RESPONSE, {
+  update: (user: UserType) => action(UserActionMap.UPDATE, user),
+
+  response: (status: boolean, data: any) => action(UserActionMap.RESPONSE, {
     status, data
   })
 }
