@@ -30,7 +30,7 @@ const UserUi = ({ users }: Props) => {
       name: user.name,
       external_code: user.external_code,
       email: user.email,
-      role_name: GetRoleByCode(user.role.toString()),
+      role_name: GetRoleByCode(user.role?.toString()),
       tags: user.tags
     })
   }

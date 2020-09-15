@@ -33,8 +33,8 @@ const UserList = ({ initUsers, update, remove }: Props) => {
       </Grid>
 
       <StyleList className='scroll'>
-        {users?.map((user: UserEntity) =>
-          <Card key={user?.id}
+        {users?.map((user: UserEntity, i:number) =>
+          <Card key={i}
             edit={() => update(user)}
             id={user.id}
             name={user.name}

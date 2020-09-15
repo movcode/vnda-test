@@ -30,6 +30,7 @@ function * update (ac: UserActionType) {
   const { payload } = ac
   try {
     const resp: AxiosResponse = yield call(updateInApi, payload)
+    console.log(resp.data)
     yield dispatch(true, resp.data)
 
     yield Alert.Show(true, 'Usuário alterado com sucesso!')

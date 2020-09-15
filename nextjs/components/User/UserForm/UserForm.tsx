@@ -65,7 +65,7 @@ const UserForm = ({ handleSubmit, update, formState }: Props) => {
 
               <InputSelectRoles
                 changed={(value: string) => setFieldValue('role_name', value)}
-                label={formState.role_name.length > 0 ? formState.role_name : 'Função*'} />
+                label={formState.role_name?.length > 0 ? formState.role_name : 'Função*'} />
 
               <Button
                 type='submit'
