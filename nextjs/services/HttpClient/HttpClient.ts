@@ -3,7 +3,7 @@ import Header from '../HttpHeader'
 
 const HOSTAPI = 'https://demo.vnda.com.br/api/v2/'
 
-export default () => ({
+const HttpClient = () => ({
   get: async (path: string, auth: boolean = false) =>
     await axios.get(`${HOSTAPI}${path}`, Header(auth)),
 
@@ -13,3 +13,5 @@ export default () => ({
   remove: async (path: string, auth: boolean) =>
     await axios.delete(`${HOSTAPI}${path}`, Header(auth))
 })
+
+export default HttpClient

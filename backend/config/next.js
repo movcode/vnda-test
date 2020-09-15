@@ -1,6 +1,6 @@
 const next = require('next')
 const dev = process.env.NODE_ENV !== 'production'
-const appNext = next({ dev })
+const appNext = next({ dev, dir: 'nextjs' })
 const handle = appNext.getRequestHandler()
 
 module.exports = async (app) => {

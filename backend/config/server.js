@@ -2,7 +2,6 @@ const express = require('express')
 const bodyParser = require('body-parser')
 
 const cors = require('../middlewares/Cors')
-require('./mongodb')
 
 const app = express()
 app.use(express.urlencoded({ extended: true }))

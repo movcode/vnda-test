@@ -13,7 +13,7 @@ import Avatar from '@material-ui/core/Avatar'
 import IconButton from '@material-ui/core/IconButton'
 import Typography from '@material-ui/core/Typography'
 import { StyleCard } from './CardStyle'
-import { Alert } from '../../ShareComponents'
+import { Alert } from '..'
 
 interface Props {
   id: string,
