@@ -16,7 +16,7 @@ const store = async data => {
     const res = await HttpClient().post(path, data, true)
     return res.data
   } catch (error) {
-    console.log(error)
+    console.log(error.response)
     return false
   }
 }
