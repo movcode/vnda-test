@@ -17,9 +17,7 @@ const UserList = ({ initUsers, update, remove }: Props) => {
 
   useEffect(() => {
     setUsers(initUsers)
-    if (response.status) {
-      setUsers([...users, response.data].reverse())
-    }
+    response.status && setUsers([...users, response.data].reverse())
   }, [response, initUsers])
 
   const removeUser = (id: string) => {

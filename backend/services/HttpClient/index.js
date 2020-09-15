@@ -11,7 +11,10 @@ const HttpClient = () => ({
     await axios.post(`${HOSTAPI}${path}`, data, Header(auth)),
 
   remove: async (path, auth) =>
-    await axios.delete(`${HOSTAPI}${path}`, Header(auth))
+    await axios.delete(`${HOSTAPI}${path}`, Header(auth)),
+
+  update: async (path, auth) =>
+    await axios.put(`${HOSTAPI}${path}`, Header(auth))
 })
 
 module.exports = HttpClient
