@@ -18,7 +18,8 @@ export interface UserType {
 
 export enum UserActionMap {
   LIST = '@redux/USER_LIST',
-  STORE = '@redux/USER_STORE'
+  STORE = '@redux/USER_STORE',
+  STORE_SUCCES = '@redux/USER_STORE_SUCCESS'
 }
 
 /**
@@ -27,4 +28,12 @@ export enum UserActionMap {
 export interface UserActionType {
   type: string,
   payload: UserType
+}
+
+/**
+ * User Type Success
+ */
+export interface UserResponseSuccess{
+  data:UserType,
+  message: string
 }
