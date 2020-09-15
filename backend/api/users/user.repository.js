@@ -36,8 +36,8 @@ const update = async (id, data) => {
     const res = await HttpClient().update(`${path}/${id}`, data, true)
     return res.data
   } catch (error) {
-    console.log(error)
-    return false
+    console.log(error.response)
+    return 'error'
   }
 }
 

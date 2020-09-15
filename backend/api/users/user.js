@@ -30,8 +30,8 @@ const update = async (req, res) => {
 
   if (!id) return errors(res).error404('id not found')
 
-  // const response = await repo.update(id, req.body)
-  // if (!response) return errors(res).error500('error server')
+  const response = await repo.update(id, req.body)
+  if (response === 'error') return errors(res).error500('error server')
 
   return res.send(req.body)
 }
