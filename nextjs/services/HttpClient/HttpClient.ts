@@ -13,8 +13,8 @@ const HttpClient = () => ({
   remove: async (path: string, auth: boolean) =>
     await axios.delete(`${HOSTAPI}${path}`, Header(auth)),
 
-  update: async (path: string, auth: boolean) =>
-    await axios.put(`${HOSTAPI}${path}`, Header(auth))
+  update: async (path: string, data: any, auth: boolean) =>
+    await axios.put(`${HOSTAPI}${path}`, data, Header(auth))
 })
 
 export default HttpClient
