@@ -27,9 +27,13 @@ const remove = async (req, res) => {
 
 const update = async (req, res) => {
   const { id } = req.params
+
   if (!id) return errors(res).error404('id not found')
 
-  return res.send(id)
+  const response = await repo.update(id, req.body)
+  if (!response) return errors(res).error500('error server')
+
+  return res.send(response)
 }
 
 module.exports = {
