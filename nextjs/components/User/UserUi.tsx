@@ -19,9 +19,14 @@ const UserUi = ({ users }: Props) => {
   const [updateForm, setUpdateForm] = useState<boolean>(false)
   const dispatch = useDispatch()
 
-  const add = (values: UserType) => !updateForm
-    ? dispatch(UserAction.store(values))
-    : dispatch(UserAction.update(values))
+  const add = (values: UserType) => {
+    if (!updateForm) {
+      dispatch(UserAction.store(values))
+    } else {
+      dispatch(UserAction.update(values))
+      setFormState(UserFormState)
+    }
+  }
 
   const update = (user: UserType) => {
     setUpdateForm(true)
